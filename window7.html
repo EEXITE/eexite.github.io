@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <title>EEXITE</title>
+<link rel="stylesheet" href="https://unpkg.com/7.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="mask-icon" href="safari-pinned-tab.svg" color="#000000">
+<meta name="apple-mobile-web-app-title" content="EEXITE">
+<meta name="application-name" content="EEXITE">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="theme-color" content="#000000">
+
+<style>
+#mydiv {
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  border: 1px solid #d3d3d3;
+}
+
+#mydivheader {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #2196F3;
+  color: #fff;
+}
+</style>
+<body>
+
+
+
+
+<div class="window" style="max-width: 600px">
+  <div class="title-bar">
+    <div class="title-bar-text">EEXITE</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body">
+    <center><H1 class="title"><img src="https://avatars.githubusercontent.com/u/109561042?v=4" width="71" height="71" alt="Exitsign"> EEXITE <img src="https://avatars.githubusercontent.com/u/109561042?v=4" width="71" height="71" alt="Exitsign"></H1><p class="about">Hi, I'm Gabriel, a game and website dev located in Australia.
+I like reading, writing, stuff from the 80's and 90's, computers,
+analogue horror, anime and obviously coding!</p><br>
+
+  <a href="https://www.reddit.com/user/THE_HORROR_ARCHIVE"><img src="https://www.redditstatic.com/mweb2x/favicon/192x192.png" class="fa"></a>
+  
+<a href="https://thehorrorarchive.itch.io"><img src="https://pbs.twimg.com/profile_images/1212846124945428480/w1htiJ0v_400x400.png" class="fa"></a>
+
+<a href="https://discordapp.com/users/940545247069470730/"><img src="https://pbs.twimg.com/profile_images/1392864511669854217/dBymBmGq_400x400.jpg" class="fa"></a>
+
+
+<a href="https://community.lambdageneration.com/user/barney-clone-215"><img src="lambadalogo.png" class="fa"></a>
+
+
+
+<a href="https://www.moddb.com/members/barney-clone-215"><img src="https://media.moddb.com/images/members/4/3399/3398047/1.png" class="fa"></a>
+<p>Main Github account:</p><a  href="https://github.com/Computerrinc"><button>Follow @computerrinc</button></a>
+<p>Second Github account:</p><a  href="https://github.com/EEXITE"><button>Follow @EEXITE</button></a>
+
+<br>
+<br>
+<a href="https://computerrinc.github.io">Main website</a>
+    <br>
+    <br>
+    <br>
+   
+  
+  </center>
+</div>
+<style>
+.title {
+font-family: 'DM Serif Display', serif;
+}
+.fa {
+  padding: 0px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+a {
+text-decoration:none;
+}
+body {
+background-color:black;
+}
+
+</style>
+</center>
+  </div>
+</div>
+ 
+</div>
+
+<script>
+//Make the DIV element draggagle:
+dragElement(document.getElementById("mydiv"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+</script>
+
+</body>
+</html>
